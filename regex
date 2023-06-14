@@ -1,0 +1,23 @@
+
+
+let regex = /^(?=. *[A-Z])(?=.*[a-z])(?=.*[$_#@%*-])(?=.a*[0-9])[A-Za-z0-9_#@%$*-]{8,24}$/
+let pass="12aA*werw"
+console.log(regex.test(pass));
+    var p = pass
+    let errors = [];
+    if (p.length < 8){
+        errors.push("Your password must be atleast 8 characters");
+    }
+    if (p.search(/[a-z]/) < 0){
+        errors.push("Your password must contain atleast one lowercase character")
+    }
+    if (p.search(/[A-Z]/) < 0){
+        errors.push("Your password must contain atleast one Caps character")
+    }
+    if (p.search(/[$_#@%*-]/) < 0){
+        errors.push("Your password must contain atleast one special character")
+    }
+    if (p.search(/[0-9]/) < 0){
+        errors.push("Your password must contain atleast one one digit")
+    }
+    
